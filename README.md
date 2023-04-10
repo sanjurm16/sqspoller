@@ -1,3 +1,5 @@
 This spring boot application is to demo:
-Poll AWS SQS for any message
-Call a service on receiving a message
+<ul>
+<li>Poll AWS SQS for any message</li>
+<li> Call a service on receiving a message </li>
+</ul>
