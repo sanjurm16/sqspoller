@@ -1,0 +1,14 @@
+spring:
+  autoconfigure:
+    exclude:
+      - org.springframework.cloud.aws.autoconfigure.context.ContextInstanceDataAutoConfiguration
+      - org.springframework.cloud.aws.autoconfigure.context.ContextStackAutoConfiguration
+      - org.springframework.cloud.aws.autoconfigure.context.ContextRegionProviderAutoConfiguration
+
+cloud:
+  aws:
+    credentials:
+      access-key: someaccesskey
+      secret-key: somesecretkey
+    end-point:
+      uri: https://sqs.us-east-1.amazonaws.com/185844325002/test-queue

@@ -1,0 +1,39 @@
+plugins {
+	id 'java'
+	id 'war'
+	id 'org.springframework.boot' version '2.7.11-SNAPSHOT'
+	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+}
+
+group = 'com.sqspoller'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+	maven { url 'https://repo.spring.io/milestone' }
+	maven { url 'https://repo.spring.io/snapshot' }
+}
+
+ext {
+	set('awsSpringVersion', '3.0.0-RC2')
+}
+
+dependencies {
+	//implementation 'org.springframework.cloud:spring-cloud-starter-aws:'
+	implementation "org.springframework.cloud:spring-cloud-starter-aws-messaging:2.2.5.RELEASE"
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	//testImplementation 'com.amazonaws:aws-java-sdk-core'
+}
+
+//dependencyManagement {
+//	imports {
+//		mavenBom "io.awspring.cloud:spring-cloud-aws-dependencies:${awsSpringVersion}"
+//	}
+//}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
